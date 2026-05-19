@@ -477,16 +477,46 @@ footer { text-align: center; padding: 1.5rem; font-size: .76rem; color: var(--te
       </div>
       <!-- Right: Contact Form -->
       <div class="cform-card">
-        <div class="cform-row2">
-          <div class="cform-group"><label>Name</label><input type="text" placeholder="Your name" /></div>
-          <div class="cform-group"><label>Email</label><input type="email" placeholder="your@email.com" /></div>
-        </div>
-        <div class="cform-group"><label>Subject</label><input type="text" placeholder="What's this about?" /></div>
-        <div class="cform-group"><label>Message</label><textarea placeholder="Tell me about your project..."></textarea></div>
-        <button class="cform-submit">➤ Send Message</button>
+
+  <!-- Success / Error banners -->
+  <div data-fs-success style="display:none; color:#4ade80; margin-bottom:1rem; font-weight:600;">
+    ✅ Message sent! I'll get back to you soon.
+  </div>
+  <div data-fs-error style="display:none; color:#f87171; margin-bottom:1rem; font-weight:600;">
+    ⚠️ Something went wrong. Please try again.
+  </div>
+
+  <form id="contact-form">
+
+    <div class="cform-row2">
+      <div class="cform-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Eric Mokaya Onsongo" data-fs-field required />
+        <span data-fs-error="name" style="color:#f87171; font-size:0.85rem;"></span>
+      </div>
+      <div class="cform-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="ericxonsongo@gmail.com" data-fs-field required />
+        <span data-fs-error="email" style="color:#f87171; font-size:0.85rem;"></span>
       </div>
     </div>
-  </div>
+
+    <div class="cform-group">
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" name="subject" placeholder="What's this about?" data-fs-field />
+    </div>
+
+    <div class="cform-group">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Tell me about your project..." data-fs-field required></textarea>
+      <span data-fs-error="message" style="color:#f87171; font-size:0.85rem;"></span>
+    </div>
+
+    <button type="submit" class="cform-submit" data-fs-submit-btn>➤ Send Message</button>
+
+  </form>
+
+</div>
 </section>
 
 <footer>© 2025 Eric Mokaya Onsongo &nbsp;·&nbsp; Senior Power Systems Technician &nbsp;·&nbsp; Kenya Power &amp; Lighting Co. Ltd.</footer>
